@@ -9,9 +9,10 @@ import 'nprogress/nprogress.css'
 Vue.use(Router)
 
 const routers = [
-  //   {
+  // 依赖注入和slot
+  // {
   //   path: '/layout',
-  //   component: Layout
+  //   component: () => import('../views/layout')
   // },
   {
     path: '/user',

@@ -4,17 +4,13 @@
     <slot></slot>
     <!-- <slot style="color:blue;">这是在slot上添加了样式</slot> -->
     <slot name="mySlot" scope="mySlot">这是拥有命名的slot的默认内容</slot>
-    <slot
-      name="header"
-      :value="value"
-      :value2="value2"
-    >kkk</slot>
+    <slot name="header" :value="value" :value2="value2">kkk</slot>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       value: [{
         id: 1
@@ -27,11 +23,17 @@ export default {
     }
   },
 
+  // 依赖注入
+  inject: ['msg', 'getMsg'],
+
   components: {},
 
   computed: {},
 
-  mounted () { },
+  mounted() {
+    // console.log(this.msg)
+    this.getMsg()
+  },
 
   methods: {}
 }
