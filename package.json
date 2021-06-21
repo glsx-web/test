@@ -16,6 +16,7 @@
   "dependencies": {
     "element-ui": "^2.15.1",
     "glsx-vue-common": "^1.1.0",
+    "lodash": "^4.17.21",
     "nprogress": "^0.2.0",
     "vue": "^2.6.12",
     "vue-router": "^3.0.1",

@@ -37,13 +37,6 @@ export default {
     }
   },
 
-  provide: {
-    msg: 'ccc',
-    getMsg: () => {
-      console.log('hi,这里是父组件的方法。')
-    }
-  },
-
   components: {
     child
   },

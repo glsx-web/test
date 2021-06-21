@@ -2,15 +2,15 @@
 <template>
   <div>
     <el-container>
-      <el-aside :class="{ 'side-close': !collapsed, 'side-all': collapsed }">
-        <menu-side></menu-side>
+      <el-aside :class="{ 'side-close': isCollapse, 'side-all': !isCollapse }">
+        <menu-side :isCollapse="isCollapse"></menu-side>
       </el-aside>
       <el-container>
         <el-header>
-          <i
-            :class="collapsed ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
+          <i v-auth="['admin']"
+            :class="isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
             style="cursor: pointer;"
-            @click="collapsed = !collapsed"
+            @click="isCollapse = !isCollapse"
           ></i>
           <Header></Header>
         </el-header>
@@ -22,6 +22,9 @@
         </el-footer>
       </el-container>
     </el-container>
+    <authorized :authority="['admin']">
+      <el-button>测试权限</el-button>
+    </authorized>
   </div>
 </template>
 
@@ -33,7 +36,7 @@ export default {
   name: 'basicLayout',
   data () {
     return {
-      collapsed: true
+      isCollapse: false
     }
   },
 
@@ -74,7 +77,7 @@ export default {
 }
 
 .side-close {
-  width: 0px !important;
+  width: 64px !important;
   transition: width 0.5s;
 }
 

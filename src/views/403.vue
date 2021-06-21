@@ -1,13 +1,10 @@
 <!--  -->
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+  <div>403</div>
 </template>
 
 <script>
 export default {
-  name: 'stepForm',
   data () {
     return {
     }
@@ -17,7 +14,7 @@ export default {
 
   computed: {},
 
-  mounted () { },
+  mounted () {},
 
   methods: {}
 }
